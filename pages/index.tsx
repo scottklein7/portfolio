@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react'
 import Link from "next/link";
 import Nav from "../components/Nav"
-import ContactForm from "../components/ContactForm"
-
+import ContactForm from '../components/ContactForm'
 import { Transition } from "@headlessui/react";
 import { Fade } from "react-awesome-reveal";
+import Head from 'next/head';
 
 
 function Home() {
 
   return (
     <>
+      <Head>
+        <meta name="Freelance Web Developer, Shandoah Valley - Scott Klein " content="Hey! Im Scott, a freelance Web Developer offering web development, design, SEO, and more. Servicing Northern Virginia and Shenandoah Valley VA. " />
+      </Head>
+      
       <Nav />
 
       <main className="font-mono bg-sky-100 text-gray-400">

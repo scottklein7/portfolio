@@ -3,7 +3,7 @@ export default function ContactForm() {
 
         <form className="flex flex-col p-5 max-w-2xl mx-auto gap-5" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden">
+            <p className="hidden">
                 <label>
                     Don’t fill this out if you’re human: <input name="bot-field" />
                 </label>
