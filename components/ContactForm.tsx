@@ -18,7 +18,7 @@ export default function ContactForm() {
                 <label className="block" htmlFor="youremail">
                     Your Email:
                 </label>
-                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" type="text" name="name" id="yourname" type="email" name="email" id="youremail" />
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="email" type="email" id="youremail" />
             </p>
             <p>
                 <label className="block" htmlFor="yourmessage">
