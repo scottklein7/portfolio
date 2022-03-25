@@ -12,9 +12,10 @@ function Home() {
   return (
     <>
       <Head>
+        <title>Freelance Web Developer, Northern VA & Shandoah Valley - Scott Klein</title>
         <meta name="Freelance Web Developer, Shandoah Valley - Scott Klein " content="Hey! Im Scott, a freelance Web Developer offering web development, design, SEO, and more. Servicing Northern Virginia and Shenandoah Valley VA. " />
       </Head>
-      
+
       <Nav />
 
       <main className="font-mono bg-sky-100 text-gray-400">
