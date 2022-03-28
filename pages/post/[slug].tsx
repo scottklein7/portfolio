@@ -24,7 +24,9 @@ export default function post({ post }: Props) {
           <h2 className="text-xl font-light text-gray-500 mb-2">{post.description}</h2>
 
           <div className="flex items-center space-x-2">
-            <Img {...imgUrl(post.author.image)} height={40} width={40} objectFit="cover" alt="author image" className="rounded-full" />
+            {post.author.image && (
+              <Img {...imgUrl(post.author.image)} height={40} width={40} objectFit="cover" alt="author image" className="rounded-full" />
+            )}
             <p className="font-extralight text-gray-500 text-sm">{post.author.name}</p>
           </div>
 
@@ -82,7 +84,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true
+    fallback: 'blocking'
   }
 }
 
@@ -114,7 +116,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       post
-    }
+    },
+    revalidate: 6800,
   }
 
 }
