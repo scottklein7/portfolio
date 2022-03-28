@@ -12,20 +12,20 @@ export default function ContactForm() {
                 <label className="block" htmlFor="yourname">
                     Your Name:
                 </label>
-                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" type="text" name="name" id="yourname" />
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" required type="text" name="name" id="yourname" />
             </p>
             <p>
                 <label className="block" htmlFor="youremail">
                     Your Email:
                 </label>
-                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="email" type="email" id="youremail" />
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="email" required type="email" id="youremail" />
             </p>
             <p>
                 <label className="block" htmlFor="yourmessage">
                     Message:
                 </label>
                 <textarea
-                    className="shadow border rounded py-2 px-3 mt-1 block w-full ring-sky-200 form-textarea outline-none focus:ring" name="message" id="yourmessage"></textarea>
+                    className="shadow border rounded py-2 px-3 mt-1 block w-full ring-sky-200 form-textarea outline-none required focus:ring" name="message" id="yourmessage"></textarea>
             </p>
             <p className="mt-3">
                 <button className="w-full shadow bg-emerald-400 hover:bg-emerald-600 
