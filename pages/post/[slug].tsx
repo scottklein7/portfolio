@@ -15,11 +15,11 @@ export default function post({ post }: Props) {
     <>
       <main>
         <Nav />
-        {post.mainImage && (
-          <Img {...imgUrl(post.mainImage)} height={500} objectFit="cover" alt="main blog image" />
-        )}
 
         <article className="max-w-3xl mx-auto p-5">
+          {post.mainImage && (
+            <Img {...imgUrl(post.mainImage)} height={500} objectFit="cover" alt="main blog image" />
+          )}
           <h1 className="text-3xl mt-10 mb-3">{post.title}</h1>
           <h2 className="text-xl font-light text-gray-500 mb-2">{post.description}</h2>
 
