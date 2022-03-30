@@ -18,3 +18,18 @@ export interface Post {
     },
     body: [object]
 }
+
+export interface Project {
+    _id: string,
+    name: string,
+    description: string,
+    slug: {
+        current: string
+    },
+    image: {
+        asset: {
+            url: string
+        },
+    }
+    blockContent: [object]
+}

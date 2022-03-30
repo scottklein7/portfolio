@@ -1,40 +1,38 @@
-import { GetStaticProps } from 'next';
-import Nav from '../../components/Nav';
-import { sanityClient, imgUrl } from '../../sanity'
-import PortableText from 'react-portable-text'
-import { Post } from "../../typings"
+import { GetStaticProps } from "next";
+import PortableText from "react-portable-text";
+import Nav from "../../components/Nav";
+import { sanityClient, imgUrl } from "../../sanity";
+import { Project } from "../../typings";
 import Img from 'next/image';
-
+import Head from "next/head";
 
 interface Props {
-  post: Post
+  project: Project
 }
 
-export default function post({ post }: Props) {
+export default function project({ project }: Props) {
   return (
     <>
-      <main>
+      <Head>
+        <title>Completed Work - {project.name}</title>
+        <meta name="description" content="Take a look at my work as I help small businesses grow using the best Web Development, Design, SEO, and E-Commerce best practices." />
+      </Head>
+
+      <main className="bg-sky-100 text-gray-700">
         <Nav />
+        <div className="max-w-3xl mx-auto p-5 font-mono">
+          <h1 className="text-4xl font-extrabold text-center mt-10 mb-10">{project.name}</h1>
 
-        <article className="max-w-3xl mx-auto p-5">
-          {post.mainImage && (
-            <Img {...imgUrl(post.mainImage)} height={500} objectFit="cover" alt="main blog image" />
-          )}
-          <h1 className="text-3xl mt-10 mb-3">{post.title}</h1>
-          <h2 className="text-xl font-light text-gray-500 mb-2">{post.description}</h2>
-
-          <div className="flex items-center space-x-2">
-            {post.author.image && (
-              <Img {...imgUrl(post.author.image)} height={40} width={40} objectFit="cover" alt="author image" className="rounded-full" />
+          <div>
+            {project.image && (
+              <Img className="shadow-lg" {...imgUrl(project.image)} objectFit="cover" alt="main project image" />
             )}
-            <p className="font-extralight text-gray-500 text-sm">{post.author.name}</p>
           </div>
-
-          <div className='mt-10'>
+          <article className='mt-10 leading-relaxed'>
             <PortableText
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-              content={post.body}
+              content={project.blockContent}
               serializers={{
                 h1: (props: any) => (
                   <h1 className="text-2xl font-bold my-5" {...props} />
@@ -55,30 +53,27 @@ export default function post({ post }: Props) {
                 ),
               }}
             />
-          </div>
-        </article>
-
-
+          </article>
+        </div>
       </main>
     </>
-
 
   )
 }
 
 export const getStaticPaths = async () => {
-  const query = `*[_type == "post"]{
+  const query = `*[_type == "project"]{
     _id,
     slug{
       current
     }
   }`
 
-  const posts = await sanityClient.fetch(query)
+  const projects = await sanityClient.fetch(query)
 
-  const paths = posts.map((post: Post) => ({
+  const paths = projects.map((project: Project) => ({
     params: {
-      slug: post.slug.current
+      slug: project.slug.current
     }
   }))
 
@@ -89,25 +84,20 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const query = `*[_type == "post" && slug.current == $slug][0]{
+  const query = `*[_type == "project" && slug.current == $slug][0]{
     _id,
-    slug,
-    title,
-    author -> {
-      name,
-      image
-    },
-    mainImage,
-    body,
+    name,
     description,
-    createdAt
+    slug,
+    image,
+    blockContent
   }`
 
-  const post = await sanityClient.fetch(query, {
+  const project = await sanityClient.fetch(query, {
     slug: params?.slug
   })
 
-  if (!post) {
+  if (!project) {
     return {
       notFound: true
     }
@@ -115,7 +105,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      post
+      project
     },
     revalidate: 6800,
   }
