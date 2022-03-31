@@ -11,6 +11,7 @@ interface Props {
 }
 
 export default function blog({ posts }: Props) {
+    console.log(posts)
     return (
         <main className="">
             <Head>
@@ -20,7 +21,7 @@ export default function blog({ posts }: Props) {
 
             <Nav />
 
-            <div className='flex flex-col items-center p-10 gap-3 text-sky-100 bg-sky-400 border-y border-white py-10'>
+            <div className='flex flex-col items-center p-10 gap-3 text-emerald-600 max-w-8xl mx-auto bg-sky-400 border-y border-slate-400 py-10'>
                 <h1 className='text-4xl leading-relaxed max-w-xl font-mono'>
                     Exploring Web Development, Design, All Things Tech, and more...
                 </h1>
@@ -31,21 +32,22 @@ export default function blog({ posts }: Props) {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3
-      md:gap-6 p-2 md:p-6 text-gray-400 font-mono">
+      md:gap-6 p-2 md:p-6 font-mono text-emerald-500">
                 {posts?.map(post => (
                     <Link key={post._id} href={`/blog/${post.slug.current}`}>
                         <div className="border shadow-lg rounded-lg group cursor-pointer overflow-hidden bg-sky-100">
                             {post.mainImage && (
-                                <Img {...imgUrl(post.mainImage)} height={220} width={450} objectFit="cover" className="group-hover:animate-pulse" />
+                                <Img {...imgUrl(post.mainImage)} layout="responsive" height={540} objectFit="cover" className="group-hover:animate-pulse" />
                             )}
-                            <div className="flex p-3 justify-between">
-                                {post.author.image && (
-                                    <Img {...imgUrl(post.author.image)} height={40} width={40} objectFit="cover" className="rounded-full" />
-                                )}
-                                <div className="">
+                            <div className="flex justify-between p-5">
+                                <div className="mr-3">
                                     <p className="text-lg font-bold">{post.title}</p>
-                                    <p className="font-extralight text-xs">{post.description}</p>
+                                    <p className="text-xs">{post.description} by {post.author.name}</p>
                                 </div>
+
+                                {post.author.image && (
+                                    <Img {...imgUrl(post.author.image)} height={48} width={48} layout="fixed" objectFit="cover" alt="author image" className="rounded-full" />
+                                )}
                             </div>
                         </div>
                     </Link>
@@ -56,7 +58,20 @@ export default function blog({ posts }: Props) {
 }
 
 export const getServerSideProps = async () => {
-    const query = `*[_type == 'post']`;
+    const query = `*[_type == 'post']{
+        _id,
+        _createdAt,
+        title,
+        author ->  {
+            name,
+            image
+        },
+        description,
+        mainImage,
+        slug,
+        body,
+
+    }`;
     const posts = await sanityClient.fetch(query);
     return {
         props: { posts },

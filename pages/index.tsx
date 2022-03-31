@@ -9,13 +9,10 @@ import Tools from '../components/Tools';
 import { Post, Project } from "../typings";
 import Img from 'next/image';
 
-
-
 interface Props {
   posts: [Post],
   projects: [Project]
 }
-
 
 export default function Home({ posts, projects }: Props) {
 
@@ -23,8 +20,12 @@ export default function Home({ posts, projects }: Props) {
     return str?.length > cutOffNum ? str.slice(0, cutOffNum - 1) + '...' : str
   }
 
-  const myLoader = ({ src = "/profilesketc22.png" }) => {
-    return `${src}`
+  const profilesketc22 = ({ src = "/profilesketc22.png", width = 400, quality = 80 }) => {
+    return `https://scottklein.dev/${src}?w=${width}&q=${quality || 75}`
+  }
+
+  const road = ({ src = "/road.png", width = 700, quality = 80 }) => {
+    return `https://scottklein.dev/${src}?w=${width}&q=${quality || 75}`
   }
 
   return (
@@ -43,18 +44,17 @@ export default function Home({ posts, projects }: Props) {
               <div className="mt-10 ml-10 md:text-center">
                 <h1 className="font-extrabold text-2xl leading-relaxed"><span className="mr-1">👋</span>Hi! I'm Scott, a Freelance Full-stack Software Developer Based In Shenandoah Valley Virginia</h1>
               </div>
-
               <div className="mt-14 mx-auto">
                 <Img
-                  loader={myLoader}
+                  loader={profilesketc22}
                   src="/profilesketc22.png"
                   alt="Personal main profile image"
                   objectFit="cover"
                   height={400}
                   width={400}
+                  priority={true}
                 />
               </div>
-
             </div>
           </Fade>
         </header>
@@ -124,8 +124,8 @@ export default function Home({ posts, projects }: Props) {
 
         <section className="flex flex-col gap-10 justify-center mt-10 p-10 md:p-14">
           <h3 className="text-center mb-10 font-extrabold text-4xl md:text-5xl">Preview of my Work</h3>
-          {projects.map((project) => (
-            <Fade key={project._id} direction='left' triggerOnce>
+          {projects.map((project, idx) => (
+            <Fade key={idx} direction='left' triggerOnce>
               <div className="bg-cyan-300 shadow-lg ">
                 <div className="">
                   <div className="grid grid-cols-1 sm:grid-cols-2 text-center">
@@ -145,38 +145,35 @@ export default function Home({ posts, projects }: Props) {
               </div>
             </Fade>
           ))}
-
         </section>
 
         <section className="p-5 flex flex-col justify-center mt-20">
-
           <h3 className="text-center font-extrabold text-4xl md:text-5xl">My Story</h3>
           <Fade duration={1700} triggerOnce>
-          <article className="text-green-600 flex justify-center flex-col p-10 space-y-5 md:flex-row md:ml-20 ">
-            <div className="w-full p-5 flex flex-col gap-5 bg-slate-300 md:p-16">
-              <p className="text-lg font-bold md:leading-9">“Two roads diverged in a wood and I – I took the one less traveled by, and that has made all the difference”.</p>
-              <p className="text-lg md:leading-9">“Two roads diverged in a wood and I – I took the one less traveled by, and that has made all the difference”.
-                Throughout my life I have never been one to conform to traditional routes. Rather, I try and let God guide my path for me, the one he intended. Before freelance web development I held an array of jobs.
-                Working restaurant jobs, owning my own landscaping business, completing hundreds of projects, managing an estate, to freelance web development in the Shenandoah valley and Northern VA, wile also regenerative farming in my spare time!</p>
-              <p className="text-lg md:leading-9">
-                My passion lies in helping grow small businesses, and restoring a vibrant entrepreneurial lead economy this
-                country once prided itself on. I know what it's like owning a small business, it's hard, but it's worth every ounce of effort, especially when your doing something you love, while providing value to your customers.
-              </p>
-              <p className="text-lg md:leading-9">
-                Rest easy knowing your web design and developing needs are in the right hands.
-              </p>
-            </div>
-            <div className="md:relative right-10 top-12">
-              <Img
-                loader={myLoader}
-                src="/road.png"
-                alt="Personal main profile image"
-                objectFit="cover"
-                height={450}
-                width={700}
-              />
-            </div>
-          </article>
+            <article className="text-green-600 flex justify-center flex-col p-10 space-y-5 md:flex-row md:ml-20 ">
+              <div className="w-full p-5 flex flex-col gap-5 bg-slate-300 md:p-16">
+                <p className="text-lg font-bold md:leading-9">“Two roads diverged in a wood and I – I took the one less traveled by, and that has made all the difference”.</p>
+                <p className="text-lg md:leading-9">Throughout my life I have never been one to conform to traditional routes. Rather, I try and let God guide my path for me, the one he intended. Before freelance web development I held an array of jobs.
+                  Working restaurant jobs, owning my own landscaping business, completing hundreds of projects, managing an estate, to freelance web development in the Shenandoah valley and Northern VA, wile also regenerative farming in my spare time!</p>
+                <p className="text-lg md:leading-9">
+                  My passion lies in helping grow small businesses, and restoring a vibrant entrepreneurial lead economy this
+                  country once prided itself on. I know what it's like owning a small business, it's hard, but it's worth every ounce of effort, especially when your doing something you love, while providing value to your customers.
+                </p>
+                <p className="text-lg md:leading-9">
+                  Rest easy knowing your web design and developing needs are in the right hands.
+                </p>
+              </div>
+              <div className="md:relative right-10 top-12">
+                <Img
+                  loader={road}
+                  src="/road.png"
+                  alt="Personal main profile image"
+                  objectFit="cover"
+                  height={450}
+                  width={700}
+                />
+              </div>
+            </article>
           </Fade>
         </section>
 
@@ -197,33 +194,18 @@ export default function Home({ posts, projects }: Props) {
           <Fade duration={1700} triggerOnce>
             <div className="flex flex-col items-center gap-3 
       md:gap-6 p-2 md:p-6">
-              {posts?.map(post => (
-                <Link key={post._id} href={`/blog/${post.slug.current}`}>
-                  <div className="border shadow-lg rounded-lg group cursor-pointer overflow-hidden">
+              {posts?.map((post, idx) => (
+                <Link key={idx} href={`/blog/${post.slug.current}`}>
+                  <div className="border shadow-lg rounded-lg group cursor-pointer overflow-hidden bg-sky-100">
                     {post.mainImage && (
-                      <Img
-                        {...imgUrl(post.mainImage)}
-                        height={200}
-                        width={400}
-                        objectFit="cover"
-                        className="group-hover:animate-pulse"
-                        alt="preview of blog post main image"
-                      />
+                      <Img {...imgUrl(post.mainImage)} layout="responsive" height={540} objectFit="cover" className="group-hover:animate-pulse" />
                     )}
-                    <div className="flex p-3 justify-between bg-sky-100">
-                      {post.author.image && (
-                        <Img {...imgUrl(post.author.image)}
-                          height={40}
-                          width={40}
-                          objectFit="cover"
-                          className="rounded-full"
-                          alt="author image for preview of blog post"
-                        />
-                      )}
-                      <div className="">
+                    <div className="p-5">
+                      <div className="flex flex-col gap-1">
                         <p className="text-lg font-bold">{post.title}</p>
-                        <p className="font-extralight text-xs">{post.description}</p>
+                        <p className="text-xs">{post.description}</p>
                       </div>
+
                     </div>
                   </div>
                 </Link>
@@ -250,7 +232,12 @@ export const getServerSideProps = async () => {
 
   const query = `
   {
-    "posts": *[_type == 'post'],
+    "posts": *[_type == 'post']{
+      title,
+      description,
+      mainImage,
+      slug
+    },
     "projects": *[_type == 'project']
   }
 `

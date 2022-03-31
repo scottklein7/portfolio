@@ -20,7 +20,7 @@ function Nav() {
                                     <Link href="/work">
                                         <a className="text-white hover:animate-pulse px-3 py-2 text-sm font-medium font-mono hover:text-blue-200">My Work</a>
                                     </Link>
-                                    <Link href="/hire">
+                                    <Link href="/hire-the-best-freelance-dev-around">
                                         <a className="text-white hover:animate-pulse px-3 py-2 text-sm font-medium font-mono hover:text-blue-200">Work With Me</a>
                                     </Link>
 
@@ -102,7 +102,7 @@ function Nav() {
                                     <a className="block rounded-md text-base font-medium text-white hover:animate-pulse px-3 py-2 font-mono hover:text-blue-200 ">My Work</a>
                                 </Link>
 
-                                <Link href="/hire">
+                                <Link href="/hire-the-best-freelance-dev-around">
                                     <a className="block rounded-md text-base font-medium text-white hover:animate-pulse px-3 py-2 font-mono hover:text-blue-200">Work With Me</a>
                                 </Link>
 

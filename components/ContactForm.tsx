@@ -1,6 +1,5 @@
 export default function ContactForm() {
     return (
-
         <form className="flex flex-col p-5 max-w-2xl mx-auto gap-5" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact" />
             <p className="hidden">
@@ -12,13 +11,13 @@ export default function ContactForm() {
                 <label className="block" htmlFor="yourname">
                     Your Name:
                 </label>
-                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" required type="text" name="name" id="yourname" />
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" required={true} type="text" name="name" id="yourname" />
             </p>
             <p>
                 <label className="block" htmlFor="youremail">
                     Your Email:
                 </label>
-                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="email" required type="email" id="youremail" />
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="email" required={true} type="email" id="youremail" />
             </p>
             <p>
                 <label className="block" htmlFor="yourmessage">

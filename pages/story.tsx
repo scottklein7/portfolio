@@ -13,16 +13,17 @@ function story() {
                 <meta name="description" content="Curious about my background? How did I get into Web development & design? My life before Web Development in Shenandoah Valley and Northern VA" />
             </Head>
 
-            <main>
+            <main className="bg-sky-100">
                 <Nav />
-                <article className="flex flex-col p-10 items-center gap-8 bg-blue-200 text-gray-600 font-mono">
+                <article className="max-w-3xl p-5 flex flex-col items-center gap-5 mx-auto font-mono text-gray-700">
                     <img
                         src={'https://imgs.search.brave.com/y39yHuzVOpCqMGSn_rA8c42a-iXzekZVdxOvzwsEhDA/rs:fit:640:640:1/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2FkLzc0/LzA1L2FkNzQwNTk4/YjBjYWYwMjQ5N2I2/MDg1MmIzM2IyMjMx/LmpwZw'}
                         width={400}
                         height={450}
+                        className="mt-5"
                     />
                     <h1 className="font-extrabold text-2xl">Intrested in my story, well take a look below!</h1>
-                    <div className="flex flex-col gap-5 w-10/12">
+                    <div className="flex flex-col gap-5 mb-5">
                         <p>I often times forget how blessed I truly am. Although it was a strange and windy path getting here,I reflect on how God has guided me through the dark in each and every moment in my life.</p>
                         <p>
                             I would have never imagined to be in the position I am today...
@@ -39,7 +40,6 @@ function story() {
                             I listned to enough podcasts this past year to make my head explode. If you didnt realize already, Im not a fan of the tradtional EDU system. I love learning for fun, not for grades, or piece of paper.
                         </p>
                         <p>Anyways, go outside, be joyful, praise God, and hire me for your web development needs! 😉</p>
-
                     </div>
                 </article>
             </main>

@@ -27,13 +27,14 @@ export default function post({ post }: Props) {
             <Img {...imgUrl(post.mainImage)} height={500} objectFit="cover" alt="main blog image" />
           )}
           <h1 className="text-3xl mt-10 mb-3">{post.title}</h1>
-          <h2 className="text-xl font-light text-gray-500 mb-2">{post.description}</h2>
+          <h2 className="text-xl font-light text-gray-500 mb-3">{post.description}</h2>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-5">
             {post.author.image && (
               <Img {...imgUrl(post.author.image)} height={40} width={40} objectFit="cover" alt="author image" className="rounded-full" />
             )}
-            <p className="font-extralight text-gray-500 text-sm">{post.author.name}</p>
+            <p className='font-extralight text-sm'>Blog post by <span className='text-green-600'>{post.author.name}</span><br /> Published at {new Date(post._createdAt).toLocaleString()}</p>
+
           </div>
 
           <div className='mt-10'>
@@ -106,7 +107,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     mainImage,
     body,
     description,
-    createdAt
+    _createdAt
   }`
 
   const post = await sanityClient.fetch(query, {
