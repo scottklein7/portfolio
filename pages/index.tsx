@@ -9,6 +9,7 @@ import Tools from '../components/Tools';
 import { Post, Project } from "../typings";
 import Img from 'next/image';
 
+
 interface Props {
   posts: [Post],
   projects: [Project]
@@ -48,7 +49,7 @@ export default function Home({ posts, projects }: Props) {
                 <Img
                   loader={profilesketc22}
                   src="/profilesketc22.png"
-                  alt="Personal main profile image"
+                  alt="Personal profile main image"
                   objectFit="cover"
                   height={400}
                   width={400}
@@ -127,12 +128,14 @@ export default function Home({ posts, projects }: Props) {
           {projects.map((project, idx) => (
             <Fade key={idx} direction='left' triggerOnce>
               <div className="bg-cyan-300 shadow-lg ">
-                <div className="">
+                <div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 text-center">
                     <Img
                       {...imgUrl(project.image.asset)}
-                      className="flex mx-auto object-cover shadow-lg "
-                      alt="profile picture" />
+                      className="flex mx-auto object-cover shadow-lg"
+                      alt="project preview main image" 
+                      layout="responsive"
+                      />
                     <div className="flex flex-col justify-center items-center p-5 mt-8 mb-5 space-y-5 md:mt-0 md:mb-0">
                       <h3 className="text-center text-3xl font-extrabold">{project.name}</h3>
                       <p className="text-lg leading-9 md:text-xl lg:text-2xl">{truncateOverview(project.description, 300)}</p>
@@ -167,7 +170,7 @@ export default function Home({ posts, projects }: Props) {
                 <Img
                   loader={road}
                   src="/road.png"
-                  alt="Personal main profile image"
+                  alt="Road less traveled by image"
                   objectFit="cover"
                   height={450}
                   width={700}
@@ -198,7 +201,13 @@ export default function Home({ posts, projects }: Props) {
                 <Link key={idx} href={`/blog/${post.slug.current}`}>
                   <div className="border shadow-lg rounded-lg group cursor-pointer overflow-hidden bg-sky-100">
                     {post.mainImage && (
-                      <Img {...imgUrl(post.mainImage)} layout="responsive" height={540} objectFit="cover" className="group-hover:animate-pulse" />
+                      <Img 
+                      {...imgUrl(post.mainImage)} 
+                      height={200} 
+                      width={450}
+                      objectFit="cover" 
+                      className="group-hover:animate-pulse" 
+                      alt="preview of blog post main image" />
                     )}
                     <div className="p-5">
                       <div className="flex flex-col gap-1">
