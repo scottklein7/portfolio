@@ -38,7 +38,7 @@ export default function work({ projects }: Props) {
                   <div className="grid grid-cols-1 sm:grid-cols-2 text-center">
                     <Img
                       {...imgUrl(project.image.asset)}
-                      className="flex mx-auto object-cover shadow-lg "
+                      className="flex mx-auto object-cover shadow-lg"
                       alt="profile picture" />
                     <div className="flex flex-col justify-center items-center p-5 mt-8 mb-5 space-y-5 md:mt-0 md:mb-0">
                       <h3 className="text-center text-3xl font-extrabold">{project.name}</h3>

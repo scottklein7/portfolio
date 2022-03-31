@@ -21,11 +21,11 @@ export default function Home({ posts, projects }: Props) {
     return str?.length > cutOffNum ? str.slice(0, cutOffNum - 1) + '...' : str
   }
 
-  const profilesketc22 = ({ src = "/profilesketc22.png", width = 400, quality = 80 }) => {
+  const profilesketc22 = ({ src = "/profilesketc22.png", width = 400, quality = 75 }) => {
     return `https://scottklein.dev/${src}?w=${width}&q=${quality || 75}`
   }
 
-  const road = ({ src = "/road.png", width = 700, quality = 80 }) => {
+  const road = ({ src = "/road.png", width = 700, quality = 75 }) => {
     return `https://scottklein.dev/${src}?w=${width}&q=${quality || 75}`
   }
 

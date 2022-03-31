@@ -37,7 +37,14 @@ export default function blog({ posts }: Props) {
                     <Link key={post._id} href={`/blog/${post.slug.current}`}>
                         <div className="border shadow-lg rounded-lg group cursor-pointer overflow-hidden bg-sky-100">
                             {post.mainImage && (
-                                <Img {...imgUrl(post.mainImage)} layout="responsive" height={540} objectFit="cover" className="group-hover:animate-pulse" />
+                                <Img 
+                                {...imgUrl(post.mainImage)} 
+                                layout="responsive" 
+                                height={540} 
+                                objectFit="cover" 
+                                className="group-hover:animate-pulse"
+                                alt="blog preview image"
+                                 />
                             )}
                             <div className="flex justify-between p-5">
                                 <div className="mr-3">
@@ -46,7 +53,14 @@ export default function blog({ posts }: Props) {
                                 </div>
 
                                 {post.author.image && (
-                                    <Img {...imgUrl(post.author.image)} height={48} width={48} layout="fixed" objectFit="cover" alt="author image" className="rounded-full" />
+                                    <Img 
+                                    {...imgUrl(post.author.image)} 
+                                    height={48} 
+                                    width={48} 
+                                    layout="fixed" 
+                                    objectFit="cover" 
+                                    alt="author image" 
+                                    className="rounded-full" />
                                 )}
                             </div>
                         </div>
