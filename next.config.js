@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-
 module.exports = {
   reactStrictMode: true,
-  wcMinify: true,
+  swcMinify: true,
   images: {
     domains: ['cdn.sanity.io'],
     loader: 'custom'
