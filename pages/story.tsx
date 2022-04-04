@@ -3,6 +3,7 @@ import React from 'react'
 import Nav from '../components/Nav'
 import Head from 'next/head';
 
+const conformImg = "/assets/conform.png"
 
 function story() {
 
@@ -16,11 +17,14 @@ function story() {
             <main className="bg-sky-100">
                 <Nav />
                 <article className="max-w-3xl p-5 flex flex-col items-center gap-5 mx-auto font-mono text-gray-700">
-                    <img
-                        src={'https://imgs.search.brave.com/y39yHuzVOpCqMGSn_rA8c42a-iXzekZVdxOvzwsEhDA/rs:fit:640:640:1/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2FkLzc0/LzA1L2FkNzQwNTk4/YjBjYWYwMjQ5N2I2/MDg1MmIzM2IyMjMx/LmpwZw'}
+                    <Img
+                        src={conformImg}
                         width={400}
                         height={450}
                         className="mt-5"
+                        priority
+                        objectFit="cover"
+
                     />
                     <h1 className="font-extrabold text-2xl">Intrested in my story, well take a look below!</h1>
                     <div className="flex flex-col gap-5 mb-5">

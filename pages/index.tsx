@@ -21,13 +21,16 @@ export default function Home({ posts, projects }: Props) {
     return str?.length > cutOffNum ? str.slice(0, cutOffNum - 1) + '...' : str
   }
 
-  const profilesketc22 = ({ src = "/profilesketc22.png", width = 400, quality = 75 }) => {
-    return `https://scottklein.dev/${src}?w=${width}&q=${quality || 75}`
-  }
+  // const profilesketc22 = ({ src = "/profilesketc22.png", width = 400, quality = 75 }) => {
+  //   return `https://scottklein.dev/${src}?w=${width}&q=${quality || 75}`
+  // }
 
-  const road = ({ src = "/road.png", width = 700, quality = 75 }) => {
-    return `https://scottklein.dev/${src}?w=${width}&q=${quality || 75}`
-  }
+  // const road = ({ src = "/road.png", width = 700, quality = 75 }) => {
+  //   return `https://scottklein.dev/${src}?w=${width}&q=${quality || 75}`
+  // }
+
+  const profileSketch = "/assets/profilesketc22.png"
+  const roadPicture = "/assets/road.png";
 
   return (
     <>
@@ -47,13 +50,13 @@ export default function Home({ posts, projects }: Props) {
               </div>
               <div className="mt-14 mx-auto">
                 <Img
-                  loader={profilesketc22}
-                  src="/profilesketc22.png"
+                  // loader={profilesketc22}
+                  src={profileSketch}
                   alt="Personal profile main image"
                   objectFit="cover"
                   height={400}
                   width={400}
-                  priority={true}
+                  priority
                 />
               </div>
             </div>
@@ -168,8 +171,7 @@ export default function Home({ posts, projects }: Props) {
               </div>
               <div className="md:relative right-10 top-12">
                 <Img
-                  loader={road}
-                  src="/road.png"
+                  src={roadPicture}
                   alt="Road less traveled by image"
                   objectFit="cover"
                   height={450}
