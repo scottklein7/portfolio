@@ -25,7 +25,7 @@ export default function work({ projects }: Props) {
       <Nav />
 
       <div className="bg-sky-100 text-emerald-500 font-mono">
-        <div className='flex flex-col gap-3 p-20'>
+        <div className="flex flex-col gap-3 p-10 md:p-14">
           <h1 className="font-extrabold text-4xl">I build websites and web apps for small businesses, growing their digital presence in the process</h1>
           <p className="leading-loose">Check em out! These are some of my most recent projects I have completed. These case studies mainly showcase my web development and design skills. Building highly performant websites (<b>FASTER</b> than any of my local competitors), using next gen tools (<b>NO WORDPRESS!!</b>), all while providing truly aesthetically pleasing designs. Sounds good but overwhelming? Browse my projects, gather a basic gist, and then let me do the rest!</p>
         </div>

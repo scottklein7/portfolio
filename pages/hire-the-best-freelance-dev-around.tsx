@@ -4,7 +4,7 @@ import Nav from '../components/Nav'
 
 function hireTheBestFreelanceDevAround() {
     return (
-        <main className="bg-sky-100 max-h-screen">
+        <main className="bg-sky-100 h-screen">
             <Head>
                 <title>Hire Me - Scott Klein - a Freelance Web Developer, Designer </title>
                 <meta name="description" content="Hire me, a freelance Web Developer, Designer, SEO startegiest, and more... Servicing the Shenandoah Valley and Northern Virginia" />
@@ -12,7 +12,7 @@ function hireTheBestFreelanceDevAround() {
 
             <Nav />
             <div>
-                <div className="flex flex-col p-10 gap-2">
+                <div className="flex flex-col p-10 gap-2 md:text-center">
                     <h1 className="font-extrabold text-4xl">Proposal Request</h1>
                     <p className="text-2xl font-thin">Need web services such as web development, design , SEO, digital ads, or more? Let me know below</p>
                 </div>
@@ -27,19 +27,19 @@ function hireTheBestFreelanceDevAround() {
                         <label className="block" htmlFor="yourname">
                             Your Name:
                         </label>
-                        <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" required={true} type="text" name="name" id="yourname" placeholder="Timmy Smith" />
+                        <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" required={true} type="text" name="name" id="yourname" placeholder="Scott Klein" />
                     </p>
                     <p>
                         <label className="block" htmlFor="youremail">
                             Your Email:
                         </label>
-                        <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="email" required={true} type="email" id="youremail" placeholder="timmysmith@email.com" />
+                        <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="email" required={true} type="email" id="youremail" placeholder="scottklein@email.com" />
                     </p>
                     <p>
                         <label className="block" htmlFor="currentwebsite">
                             Your Website Url:
                         </label>
-                        <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="currentwebsite" type="url" id="yourwebsite" placeholder="tiimysmith.dev" />
+                        <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="currentwebsite" type="url" id="yourwebsite" placeholder="https://www.scottklein.dev" />
                     </p>
                     <p>
                         <label className="block" htmlFor="yourmessage">
