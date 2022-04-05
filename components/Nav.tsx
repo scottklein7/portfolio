@@ -110,7 +110,7 @@ function Nav() {
                                     <a className="block rounded-md text-base font-medium text-white hover:animate-pulse px-3 py-2 font-mono hover:text-blue-200">Story</a>
                                 </Link>
 
-                                <Link href="/contact">
+                                <Link href="/what-i-do">
                                     <a className="block rounded-md text-base font-medium text-white hover:animate-pulse px-3 py-2 font-mono hover:text-blue-200">What I Do</a>
                                 </Link>
 

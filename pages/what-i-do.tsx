@@ -11,6 +11,7 @@ function whatIDO() {
     return (
         <>
             <Nav />
+            
             <div className="snap-y snap-mandatory h-screen w-screen overflow-scroll">
                 <div className="snap-start bg-blue-400 w-screen h-screen flex items-center justify-center">
                     <Fade duration={1850} triggerOnce>
@@ -33,7 +34,7 @@ function whatIDO() {
                     </Fade>
                 </div>
 
-                <div className="snap-start bg-blue w-screen h-screen flex items-center justify-center text-3xl">
+                {/* <div className="snap-start bg-blue w-screen h-screen flex items-center justify-center text-3xl"> */}
                     <div className="snap-start bg-blue-500 w-screen h-screen flex items-center justify-center">
                         <Fade duration={1850} triggerOnce>
                             <div className="flex flex-col md:flex-row md:justify-around items-center md:p-0">
@@ -53,9 +54,9 @@ function whatIDO() {
                             </div>
                         </Fade>
                     </div>
-                </div>
+                {/* </div> */}
 
-                <div className="snap-start bg-green w-screen h-screen flex items-center justify-center text-3xl">
+                {/* <div className="snap-start bg-green w-screen h-screen flex items-center justify-center text-3xl"> */}
                     <div className="snap-start bg-blue-600 w-screen h-screen flex items-center justify-center">
                         <Fade duration={1850} triggerOnce>
                             <div className="flex flex-col md:flex-row md:justify-around items-center md:p-0">
@@ -75,8 +76,9 @@ function whatIDO() {
                             </div>
                         </Fade>
                     </div>
-                </div>
-                <div className="snap-start bg-pink w-screen h-screen flex items-center justify-center text-3xl">
+                {/* </div> */}
+                
+                {/* <div className="snap-start bg-pink w-screen h-screen flex items-center justify-center text-3xl"> */}
                     <div className="snap-start bg-blue-700 w-screen h-screen flex items-center justify-center">
                         <Fade duration={1850} triggerOnce>
                             <div className="flex flex-col md:flex-row md:justify-around items-center md:p-0">
@@ -96,7 +98,7 @@ function whatIDO() {
                             </div>
                         </Fade>
                     </div>
-                </div>
+                {/* </div> */}
             </div>
         </>
     )
