@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { sanityClient, imgUrl } from '../sanity'
 import Nav from "../components/Nav"
-import ContactForm from '../components/ContactForm'
 import { Fade } from "react-awesome-reveal";
 import Head from 'next/head';
 import Testimonal from '../components/Testimonal';
