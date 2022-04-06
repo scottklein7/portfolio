@@ -18,7 +18,7 @@ function whatIDO() {
                         <div className="flex flex-col md:flex-row md:justify-around items-center md:p-0">
                             <div className="flex gap-3 mt-2 text-slate-100 px-5 flex-col md:w-1/2 font-mono">
                                 <h2 className="md:text-3xl font-extrabold underline underline-offset-2">Highly Performant Websites</h2>
-                                <p className="text-sm md:text-xl">Did you know <b>"53% of visitors will abandon your website if it takes more than 3 seconds to load."</b>Most freelance web developers and agencies are going to use egregiously slow software for your site, such as Wordpress or Wix. Good news is, I do not take shortcuts on performance! Using frameworks like React & Next.js means your site will be faster than all your competitors. But hey, don't trust me, let me audit my site's vs local competitors and let's see the difference. </p>
+                                <p className="text-sm md:text-xl">Did you know <b>"53% of visitors will abandon your website if it takes more than 3 seconds to load."</b> Most freelance web developers and agencies are going to use egregiously slow software for your site, such as Wordpress or Wix. Good news is I do not take shortcuts on performance! Using frameworks like React & Next.js means your site will be faster than all your competitors. But hey, don't trust me, let me audit my site's vs local competitors and let's see the difference. </p>
                             </div>
                             <div className="hover:animate-spin">
                                 <Img

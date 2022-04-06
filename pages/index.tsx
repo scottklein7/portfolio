@@ -35,7 +35,6 @@ export default function Home({ posts, projects }: Props) {
       <main className="font-mono bg-sky-100 text-emerald-500">
         <header className="w-full mb-20">
           <Fade duration={1700} triggerOnce>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 items-center justify-center">
               <div className="mt-10 ml-10 md:text-center">
                 <h1 className="font-extrabold text-2xl leading-relaxed"><span className="mr-1">👋</span>Hi! I'm Scott, a Freelance Full-stack Software Developer Based In Shenandoah Valley Virginia</h1>
@@ -121,6 +120,7 @@ export default function Home({ posts, projects }: Props) {
           <h3 className="text-center mb-10 font-extrabold text-4xl md:text-5xl">Preview of my Work</h3>
           {projects.map((project, idx) => (
             <Fade key={idx} direction='left' triggerOnce>
+
               <div className="bg-cyan-300 shadow-lg ">
                 <div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 text-center">
