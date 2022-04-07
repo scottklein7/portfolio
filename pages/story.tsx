@@ -24,7 +24,6 @@ function story() {
                         className="mt-5"
                         priority
                         objectFit="cover"
-
                     />
                     <h1 className="font-extrabold text-2xl">Intrested in my story, well take a look below!</h1>
                     <div className="flex flex-col gap-5 mb-5">

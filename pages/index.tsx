@@ -217,7 +217,7 @@ export default function Home({ posts, projects }: Props) {
 
         <section className="">
           <h3 className="text-center mt-20 font-extrabold text-4xl md:text-5xl">Contact Me!</h3>
-          <Fade duration={1700} triggerOnce>
+          {/* <Fade duration={1700} triggerOnce> */}
             <form className="flex flex-col p-5 max-w-2xl mx-auto gap-5" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
               <input type="hidden" name="form-name" value="contact" />
               <p className="hidden">
@@ -238,12 +238,6 @@ export default function Home({ posts, projects }: Props) {
                 <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="email" required={true} type="email" id="youremail" placeholder="scottklein@email.com" />
               </p>
               <p>
-                <label className="block" htmlFor="currentwebsite">
-                  Your Website Url:
-                </label>
-                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="currentwebsite" type="url" id="yourwebsite" placeholder="https://www.scottklein.dev" />
-              </p>
-              <p>
                 <label className="block" htmlFor="yourmessage">
                   What you need help with:
                 </label>
@@ -256,7 +250,7 @@ export default function Home({ posts, projects }: Props) {
                 font-bold py-2 px-4 rounded cursor-pointer" type="submit">Send</button>
               </p>
             </form>
-          </Fade>
+          {/* </Fade> */}
         </section>
       </main>
     </>

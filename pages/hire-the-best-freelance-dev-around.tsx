@@ -4,7 +4,7 @@ import Nav from '../components/Nav'
 
 function hireTheBestFreelanceDevAround() {
     return (
-        <main className="bg-sky-100 h-screen">
+        <main className="bg-sky-100 h-full md:h-screen">
             <Head>
                 <title>Hire Me - Scott Klein - a Freelance Web Developer, Designer </title>
                 <meta name="description" content="Hire me, a freelance Web Developer, Designer, SEO startegiest, and more... Servicing the Shenandoah Valley and Northern Virginia" />
@@ -13,7 +13,7 @@ function hireTheBestFreelanceDevAround() {
 
             <Nav />
             <div>
-                <div className="flex flex-col p-10 gap-5">
+                <div className="flex flex-col p-10 gap-5 md:text-center">
                     <h1 className="font-extrabold text-4xl text-center">Proposal Request</h1>
                     <p className="text-2xl font-thin">Do you need awesome web services such as web development, design , SEO, digital ads, or more? Let me know below</p>
                     <p className="text-2xl font-thin">Don't hesitate to reach out, even if your just saying hello! I'd love to help in any way possible</p>
