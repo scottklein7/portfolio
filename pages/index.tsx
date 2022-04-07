@@ -7,7 +7,7 @@ import Testimonal from '../components/Testimonal';
 import Tools from '../components/Tools';
 import { Post, Project } from "../typings";
 import Img from 'next/image';
-import Contact from "../components/Contact";
+
 
 
 interface Props {
@@ -219,7 +219,38 @@ export default function Home({ posts, projects }: Props) {
         <section className="">
           <h3 className="text-center mt-20 font-extrabold text-4xl md:text-5xl">Contact Me!</h3>
           <Fade duration={1700} triggerOnce>
-            <Contact />
+          <form className="flex flex-col p-5 max-w-2xl mx-auto gap-5" name="contact-me-home" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name-index" value="contact" />
+            <p className="hidden">
+                <label>
+                    Don’t fill this out if you’re human: <input name="bot-field" />
+                </label>
+            </p>
+            <p>
+                <label className="block" htmlFor="yourname">
+                    Your Name:
+                </label>
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" required={true} type="index-text" name="thename" id="yourname" placeholder="Scott Klein" />
+            </p>
+            <p>
+                <label className="block" htmlFor="youremail">
+                    Your Email:
+                </label>
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="index-email" required={true} type="email" id="youremail" placeholder="scottklein@email.com" />
+            </p>
+            <p>
+                <label className="block" htmlFor="message">
+                    What you need help with:
+                </label>
+                <textarea
+                    className="shadow border rounded py-2 px-3 mt-1 block w-full ring-sky-200 form-textarea outline-none required focus:ring" name="index-message" id="yourmessage" placeholder="I need your webskills! Somebody forced me into a slow Wordpress site!"></textarea>
+            </p>
+            <p className="mt-3">
+                <button className="w-full shadow bg-emerald-400 hover:bg-emerald-600 
+                focus:shadow-outline focus:outline-none text-white 
+                font-bold py-2 px-4 rounded cursor-pointer" type="submit">Send</button>
+            </p>
+        </form>
           </Fade>
         </section>
       </main>
