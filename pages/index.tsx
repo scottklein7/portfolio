@@ -20,7 +20,7 @@ export default function Home({ posts, projects }: Props) {
     return str?.length > cutOffNum ? str.slice(0, cutOffNum - 1) + '...' : str
   }
 
-  const profileSketch = "/assets/profilesketc22.png"
+  const profileSketch = "/assets/profilesketc2.png"
   const roadPicture = "/assets/road.png";
 
   return (
@@ -120,7 +120,6 @@ export default function Home({ posts, projects }: Props) {
           <h3 className="text-center mb-10 font-extrabold text-4xl md:text-5xl">Preview of my Work</h3>
           {projects.map((project, idx) => (
             <Fade key={idx} direction='left' triggerOnce>
-
               <div className="bg-cyan-300 shadow-lg ">
                 <div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 text-center">
@@ -219,8 +218,8 @@ export default function Home({ posts, projects }: Props) {
         <section className="">
           <h3 className="text-center mt-20 font-extrabold text-4xl md:text-5xl">Contact Me!</h3>
           <Fade duration={1700} triggerOnce>
-            <form className="flex flex-col p-5 max-w-2xl mx-auto gap-5" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="contact" />
+            <form className="flex flex-col p-5 max-w-2xl mx-auto gap-5" name="contact-home" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact-home" />
               <p className="hidden">
                 <label>
                   Don’t fill this out if you’re human: <input name="bot-field" />
@@ -253,9 +252,7 @@ export default function Home({ posts, projects }: Props) {
             </form>
           </Fade>
         </section>
-
       </main>
-
     </>
   )
 }
