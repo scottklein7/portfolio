@@ -119,7 +119,7 @@ export default function Home({ posts, projects }: Props) {
         <section className="flex flex-col gap-10 justify-center mt-10 p-10 md:p-14">
           <h3 className="text-center mb-10 font-extrabold text-4xl md:text-5xl">Preview of my Work</h3>
           {projects.map((project, idx) => (
-            <Fade key={idx} direction='left' triggerOnce>
+            <Fade key={idx} direction='up' triggerOnce>
               <div className="bg-cyan-300 shadow-lg ">
                 <div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 text-center">
@@ -129,11 +129,11 @@ export default function Home({ posts, projects }: Props) {
                       alt="project preview main image"
                       layout="responsive"
                     />
-                    <div className="flex flex-col justify-center items-center p-5 mt-8 mb-5 space-y-5 md:mt-0 md:mb-0">
-                      <h3 className="text-center text-3xl font-extrabold">{project.name}</h3>
+                    <div className="flex flex-col justify-center items-center p-5 mt-8 mb-5 space-y-8 md:mt-0 md:mb-0">
+                      <h3 className="text-3xl font-extrabold">{project.name}</h3>
                       <p className="text-lg leading-9 md:text-xl lg:text-2xl">{truncateOverview(project.description, 300)}</p>
                       <Link href={`/work/${project.slug.current}`}>
-                        <a className="bg-purple-800 w-26 flex items-center h-12 p-2 text-white font-extrabold text-sm hover:bg-purple-900 hover:animate-bounce hover:rounded md:mb-0">View Project</a>
+                        <a className="bg-purple-800 w-36 flex items-center justify-center h-16 p-2 text-white font-extrabold hover:bg-purple-900 hover:animate-bounce hover:rounded md:mb-0">View Project</a>
                       </Link>
                     </div>
                   </div>
@@ -218,8 +218,8 @@ export default function Home({ posts, projects }: Props) {
         <section className="">
           <h3 className="text-center mt-20 font-extrabold text-4xl md:text-5xl">Contact Me!</h3>
           <Fade duration={1700} triggerOnce>
-            <form className="flex flex-col p-5 max-w-2xl mx-auto gap-5" name="contact-home" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="contact-home" />
+            <form className="flex flex-col p-5 max-w-2xl mx-auto gap-5" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact" />
               <p className="hidden">
                 <label>
                   Don’t fill this out if you’re human: <input name="bot-field" />
@@ -229,20 +229,26 @@ export default function Home({ posts, projects }: Props) {
                 <label className="block" htmlFor="yourname">
                   Your Name:
                 </label>
-                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" required={true} type="text" name="name" id="yourname" />
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" required={true} type="text" name="name" id="yourname" placeholder="Scott Klein" />
               </p>
               <p>
                 <label className="block" htmlFor="youremail">
                   Your Email:
                 </label>
-                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="email" required={true} type="email" id="youremail" />
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="email" required={true} type="email" id="youremail" placeholder="scottklein@email.com" />
+              </p>
+              <p>
+                <label className="block" htmlFor="currentwebsite">
+                  Your Website Url:
+                </label>
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" name="currentwebsite" type="url" id="yourwebsite" placeholder="https://www.scottklein.dev" />
               </p>
               <p>
                 <label className="block" htmlFor="yourmessage">
-                  Message:
+                  What you need help with:
                 </label>
                 <textarea
-                  className="shadow border rounded py-2 px-3 mt-1 block w-full ring-sky-200 form-textarea outline-none required focus:ring" name="message" id="yourmessage"></textarea>
+                  className="shadow border rounded py-2 px-3 mt-1 block w-full ring-sky-200 form-textarea outline-none required focus:ring" name="message" id="yourmessage" placeholder="I need your webskills! Somebody forced me into a slow Wordpress site!"></textarea>
               </p>
               <p className="mt-3">
                 <button className="w-full shadow bg-emerald-400 hover:bg-emerald-600 

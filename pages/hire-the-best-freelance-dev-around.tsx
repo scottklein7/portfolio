@@ -8,13 +8,15 @@ function hireTheBestFreelanceDevAround() {
             <Head>
                 <title>Hire Me - Scott Klein - a Freelance Web Developer, Designer </title>
                 <meta name="description" content="Hire me, a freelance Web Developer, Designer, SEO startegiest, and more... Servicing the Shenandoah Valley and Northern Virginia" />
+                <meta name="keywords" content="Hire web developer, Hire web designer, Shenandoah Valley, Harrisonburg VA, Reston VA, Woodstock VA," />
             </Head>
 
             <Nav />
             <div>
-                <div className="flex flex-col p-10 gap-2 md:text-center">
-                    <h1 className="font-extrabold text-4xl">Proposal Request</h1>
-                    <p className="text-2xl font-thin">Need web services such as web development, design , SEO, digital ads, or more? Let me know below</p>
+                <div className="flex flex-col p-10 gap-5">
+                    <h1 className="font-extrabold text-4xl text-center">Proposal Request</h1>
+                    <p className="text-2xl font-thin">Do you need awesome web services such as web development, design , SEO, digital ads, or more? Let me know below</p>
+                    <p className="text-2xl font-thin">Don't hesitate to reach out, even if your just saying hello! I'd love to help in any way possible</p>
                 </div>
                 <form className="flex flex-col p-5 max-w-2xl mx-auto gap-5" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="contact" />
