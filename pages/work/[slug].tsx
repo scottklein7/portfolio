@@ -5,6 +5,7 @@ import { sanityClient, imgUrl } from "../../sanity";
 import { Project } from "../../typings";
 import Img from 'next/image';
 import Head from "next/head";
+import Footer from "../../components/Footer";
 
 interface Props {
   project: Project
@@ -56,6 +57,7 @@ export default function project({ project }: Props) {
           </article>
         </div>
       </main>
+      <Footer />
     </>
 
   )

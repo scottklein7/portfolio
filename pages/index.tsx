@@ -7,6 +7,7 @@ import Testimonal from '../components/Testimonal';
 import Tools from '../components/Tools';
 import { Post, Project } from "../typings";
 import Img from 'next/image';
+import Footer from "../components/Footer";
 
 
 
@@ -183,7 +184,7 @@ export default function Home({ posts, projects }: Props) {
         </section>
 
         <section className="flex flex-col justify-center items-center p-10 mt-20">
-          <h3 className=" mb-10 font-extrabold text-3xl md:text-4xl">Dont Trust, Verify, what people are saying!</h3>
+          <h3 className="mb-10 text-center font-extrabold text-3xl md:text-4xl">Dont Trust, Verify, what people are saying!</h3>
           <Fade duration={1700} triggerOnce>
             <Testimonal />
           </Fade>
@@ -219,49 +220,8 @@ export default function Home({ posts, projects }: Props) {
             </div>
           </Fade>
         </section>
-
-        <section className="">
-          <h3 className="text-center mt-20 font-extrabold text-4xl md:text-5xl">Contact Me!</h3>
-          <Fade duration={1700} triggerOnce>
-            <form className="flex flex-col p-5 max-w-2xl mx-auto gap-5" name="contact-index" method="POST" data-netlify="true">
-              <p>
-                <label className="block" htmlFor="yourname">
-                  Your Name:
-                </label>
-                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring" required={true} type="text" name="index-name" id="index-name" placeholder="Scott Klein" />
-              </p>
-              <p>
-                <label className="block" htmlFor="youremail">
-                  Your Email:
-                </label>
-                <input
-                  className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-sky-200 outline-none focus:ring"
-                  name="index-email"
-                  required={true}
-                  type="email"
-                  id="index-email"
-                  placeholder="scottklein@email.com" />
-              </p>
-              <p>
-                <label className="block" htmlFor="message">
-                  What you need help with:
-                </label>
-                <textarea
-                  className="shadow border rounded py-2 px-3 mt-1 block w-full ring-sky-200 form-textarea outline-none required={true} focus:ring"
-                  name="index-message"
-                  id="index-yourmessage"
-                  placeholder="I need your webskills! Somebody forced me into a slow Wordpress site!">
-                </textarea>
-              </p>
-              <p className="mt-3">
-                <button className="w-full shadow bg-emerald-400 hover:bg-emerald-600 
-                focus:shadow-outline focus:outline-none text-white 
-                font-bold py-2 px-4 rounded cursor-pointer" type="submit">Send</button>
-              </p>
-            </form>
-          </Fade>
-        </section>
       </main>
+      <Footer />
     </>
   )
 }

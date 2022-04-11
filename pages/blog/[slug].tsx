@@ -5,6 +5,7 @@ import PortableText from 'react-portable-text'
 import { Post } from "../../typings"
 import Img from 'next/image';
 import Head from 'next/head';
+import Footer from '../../components/Footer';
 
 interface Props {
   post: Post
@@ -34,7 +35,6 @@ export default function post({ post }: Props) {
               <Img {...imgUrl(post.author.image)} height={40} width={40} objectFit="cover" alt="author image" className="rounded-full" />
             )}
             <p className='font-extralight text-sm'>Blog post by <span className='text-green-600'>{post.author.name}</span><br /> Published at {new Date(post._createdAt).toLocaleString()}</p>
-
           </div>
 
           <div className='mt-10'>
@@ -64,12 +64,9 @@ export default function post({ post }: Props) {
             />
           </div>
         </article>
-
-
       </main>
+      <Footer />
     </>
-
-
   )
 }
 

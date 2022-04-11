@@ -2,6 +2,7 @@ import Img from 'next/image'
 import React from 'react'
 import Nav from '../components/Nav'
 import Head from 'next/head';
+import Footer from '../components/Footer';
 
 const conformImg = "/assets/conform.png"
 
@@ -42,6 +43,7 @@ function story() {
                     </div>
                 </article>
             </main>
+            <Footer />
         </>
     )
 }

@@ -2,6 +2,7 @@ import Head from "next/head"
 import Img from "next/image"
 import Link from "next/link"
 import { Fade } from "react-awesome-reveal"
+import Footer from "../components/Footer"
 import Nav from "../components/Nav"
 import { sanityClient, imgUrl } from "../sanity"
 import { Project } from "../typings"
@@ -17,6 +18,7 @@ const truncateOverview = (str: String, cutOffNum: any) => {
 export default function work({ projects }: Props) {
   console.log(projects)
   return (
+    <>
     <main>
       <Head>
 
@@ -56,6 +58,8 @@ export default function work({ projects }: Props) {
         </div>
       </div>
     </main>
+    <Footer />
+    </>
   )
 }
 
