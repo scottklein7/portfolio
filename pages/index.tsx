@@ -29,6 +29,7 @@ export default function Home({ posts, projects }: Props) {
       <Head>
         <title>Freelance Web Developer, servicing Northern VA & Shenandoah Valley - Scott Klein</title>
         <meta name="description" content="Hey! Im Scott, a freelance Web Developer offering web development, design, SEO, and more. Servicing Northern Virginia and Shenandoah Valley VA." />
+        meta
       </Head>
 
       <Nav />
