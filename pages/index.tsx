@@ -10,7 +10,6 @@ import Img from 'next/image';
 import Footer from "../components/Footer";
 
 
-
 interface Props {
   posts: [Post],
   projects: [Project]
@@ -30,7 +29,7 @@ export default function Home({ posts, projects }: Props) {
       <Head>
         <title>Freelance Web Developer, servicing Northern VA & Shenandoah Valley - Scott Klein</title>
         <meta name="description" content="Hey! Im Scott, a freelance Web Developer offering web development, design, SEO, and more. Servicing Northern Virginia and Shenandoah Valley VA." />
-        meta
+        <meta name="keywords" content="web development, SEO, web design, freelance, shenandoah valley virginia, northern virginia" />
       </Head>
 
       <Nav />

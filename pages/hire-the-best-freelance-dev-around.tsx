@@ -10,7 +10,7 @@ function hireTheBestFreelanceDevAround() {
                 <Head>
                     <title>Hire Me - Scott Klein - a Freelance Web Developer, Designer </title>
                     <meta name="description" content="Hire me, a freelance Web Developer, Designer, SEO startegiest, and more... Servicing the Shenandoah Valley and Northern Virginia" />
-                    <meta name="keywords" content="Hire web developer, Hire web designer, Shenandoah Valley, Harrisonburg VA, Reston VA, Woodstock VA," />
+                    <meta name="keywords" content="Hire web developer, Hire web designer, Shenandoah Valley, Harrisonburg VA, Reston VA, Woodstock VA, Ashburn VA, Mt. Jackson VA" />
                 </Head>
 
                 <Nav />

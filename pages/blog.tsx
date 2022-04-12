@@ -17,8 +17,9 @@ export default function blog({ posts }: Props) {
         <>
             <main className="">
                 <Head>
-                    <title><title>A Blog by Freelance Web Developer, Designer Scott Klein</title> </title>
+                    <title>A Blog by Freelance Web Developer, Designer Scott Klein</title>
                     <meta name="description" content="Join me, a freelance Web Developer, and Designer as I explore all things SEO, Software, e-commerce, and more! " />
+                    <meta name="keywords" content="web development, SEO, blog, web design, shenandoah valley VA, northern VA" />
                 </Head>
 
                 <Nav />

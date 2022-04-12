@@ -20,8 +20,10 @@ export default function work({ projects }: Props) {
   return (
     <>
     <main>
-      <Head>
-
+       <Head>
+        <title>Previous completed work </title>
+        <meta name="description" content="Take a look at some of my previously completed work, as I help grow small business in the Shenandoah Valley and northern Virginia through web development, SEO, and more!" />
+        <meta name="keywords" content="web development, previous work, SEO, web design, freelance, shenandoah valley virginia, northern virginia" />
       </Head>
 
       <Nav />

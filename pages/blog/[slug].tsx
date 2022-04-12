@@ -17,7 +17,7 @@ export default function post({ post }: Props) {
 
       <Head>
         <title>Blog Post - {post.title}</title>
-        <meta name="description" content="" />
+        <meta name="description" content="Exploring all things tech, SEO, web development, design, and more" />
       </Head>
 
       <main className="bg-sky-100">
